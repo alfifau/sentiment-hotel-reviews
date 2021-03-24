@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>{{ title }}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link rel="shortcut icon" href="static/chat.png">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark"> 
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0" href="{{ url_for('index') }}">{{ title }}</h3>
+        </div>
+    </header>
+
+    <main class="px-3">
+      <h1>Detect your hotel review sentiment</h1>
+      <p class="lead">Sentiment analysis on hotel reviews using Neural Network</p>
+    </main>
+
+    <div class="container">
+        <form class="row g-3" action="{{ url_for('index') }}" method="POST">
+            <div class="mb-3">
+                <textarea class="form-control" id="review" name="review" rows="3" placeholder="Put your review here..">{{ review }}</textarea>
+            </div>
+            <br>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-danger mb-3">Predict!</button>
+            </div>
+          </form>
+        <div id="sentiment" class="text-center">{{ sentiment | safe}}</div>
+    </div>
+
+    <footer class="mt-auto text-white-50">
+      <p>Development by <a href="https://instagram.com/alfifao" class="text-white">@alfifao</a>.</p>
+    </footer>
+    </div>
+
+
+    
+  </body>
+</html>
