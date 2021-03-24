@@ -1,2 +1,1 @@
 -r common.txt
-tensorflow==2.4.1
